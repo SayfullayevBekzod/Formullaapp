@@ -9,7 +9,7 @@ chempionat1 = Haydovchi("Alijon", 9)
 chempionat1 = Haydovchi("Ali", 8)
 chempionat1 = Haydovchi("Ali", 7)
 chempionat2 = GP("Ali")
-print(chempionat2.getGPRanking())
+#print(chempionat2.getGPRanking())
 # print(chempionat.defineGrandPrix('katta aylana yo\'li'))
 # print(chempionat.getGrandPrix('kattaaylana yo\'li'))
 
