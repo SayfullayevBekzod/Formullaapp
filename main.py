@@ -1,15 +1,24 @@
 from championship import Championship
 from haydovchi import Haydovchi
-from time1 import Time
 from gp import GP
+from time1 import Time
 
 chempionat = Championship()
-chempionat1 = Haydovchi("Ali", 10)
-chempionat1 = Haydovchi("Alijon", 9)
-chempionat1 = Haydovchi("Ali", 8)
-chempionat1 = Haydovchi("Ali", 7)
-chempionat2 = GP("Ali")
-#print(chempionat2.getGPRanking())
+time = Time()
+time.setTime(1, 30, 45, 500)
+print(time)  # Soat:minut:soniya.millisikund formatida vaqtni chiqaradi
+
+
+chempionat1 = Haydovchi("Ali",120)
+chempionat2 = Haydovchi("Alijon", 130)
+chempionat3 = Haydovchi("Vali", 150)
+chempionat4 = Haydovchi("Qodir", 100)
+print(f"{chempionat1.getName()} --> {chempionat1.getFinishingTime()}")
+print(f"{chempionat2.getName()} --> {chempionat2.getFinishingTime()}")
+print(f"{chempionat3.getName()} --> {chempionat3.getFinishingTime()}")
+print(f"{chempionat4.getName()} --> {chempionat4.getFinishingTime()}")
+print(chempionat4._finish_time)
+
 # print(chempionat.defineGrandPrix('katta aylana yo\'li'))
 # print(chempionat.getGrandPrix('kattaaylana yo\'li'))
 

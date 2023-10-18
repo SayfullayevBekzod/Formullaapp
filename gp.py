@@ -7,7 +7,10 @@ class GP:
         self.drivers.append(driver)
         
     def getGPRanking(self):
-        return sorted(self.drivers, key=lambda driver: driver)
+        return sorted(
+            self.drivers,
+            key=lambda x: x.getGPPoints(),
+            reverse=True)
     
     @property
     def name(self):
