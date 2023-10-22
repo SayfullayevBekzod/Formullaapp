@@ -1,39 +1,42 @@
-from championship import Championship
-from gp import GP
-from haydovchi import Haydovchi
-from time1 import TugashVaqti
-
-chempionat = Championship()
-chempionat1 = Haydovchi("Ali", 10)
-chempionat1 = Haydovchi("Alijon", 9)
-chempionat1 = Haydovchi("Ali", 8)
-chempionat1 = Haydovchi("Ali", 7)
-chempionat2 = GP("Ali")
-#print(chempionat2.getGPRanking())
-
-chempionat.defineGrandPrix("katta halqa")
-gp = GP("katta halqa")
-gp1 = GP("tekis yolak")
-driver1 = Haydovchi('ali')
-driver2 = Haydovchi('vali')
-
-tugash_vaqti1 = TugashVaqti(11, 35, 34, 123)
-tugash_vaqti2 = TugashVaqti(11, 35, 34, 122)
-tugash_vaqti3 = TugashVaqti(11, 35, 34, 120)
+from championship import Chempionship
 
 
-print(chempionat.set_time(gp, driver1, tugash_vaqti1))
-print(chempionat.set_time(gp, driver2, tugash_vaqti2))
-print(chempionat.set_time(gp1, driver1, tugash_vaqti3))
+tournament = Chempionship()
 
-a = chempionat.getGrandPrix("katta halqa")
-print(a.get_gp_ranking())
-print(a.get_position(driver1))
-print(driver1.get_raced())
-# print(chempionat.defineGrandPrix('katta aylana yo\'li'))
-# print(chempionat.getGrandPrix('kattaaylana yo\'li'))
+tournament.createGriver("Lewis Hamilton")
+tournament.createGriver("Michael Schumacher")
+tournament.createGriver("Sebastian Vettel")
+tournament.createGriver("Alain Rost")
 
-# chempionat.createDriver('ibrohimjon')
-# chempionat.createDriver('ali')
-# print(chempionat.getDriver('ali'))
-# print(chempionat.getDrivers())
+for d in tournament.get_drivers():
+    print(d.get_name)
+
+print()
+dr = tournament.get_driver("Lewis Hamilton")
+dr2 = tournament.get_driver("Michael Schumacher")
+dr3 = tournament.get_driver("Sebastian Vettel")
+dr4 = tournament.get_driver("Alain Rost")
+if dr != -1.0:
+    print(dr.get_name)
+
+gp1 = tournament.define_gp("55th annual grand pri tournament")
+print(tournament.define_gp("Mayor's Special Grand Pri Tournament"))
+
+print(tournament.get_gp("Mayor's Special Grand Pri Tournament"))
+print(tournament.get_gp("Formula-1"))
+
+tournament.enter_driver(gp1, dr)
+tournament.enter_driver(gp1, dr2)
+tournament.enter_driver(gp1, dr3)
+tournament.enter_driver(gp1, dr4)
+
+print(tournament.set_time(dr, dr, 1, 20, 40, 50))
+print(tournament.set_time(dr, dr2, 0, 40, 0, 0))
+print(tournament.set_time(dr2, dr3, 0, 20, 0, 0))
+print(tournament.set_time(dr3, dr4, 0, 15, 0, 0))
+
+print(tournament.gp_ranking(gp1))
+print(tournament.get_position(dr3, gp1))
+
+print(tournament.get_championship_ranking())
+
