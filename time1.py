@@ -1,15 +1,17 @@
+class TugashVaqti:
+    def __init__(self, hour, minut, second, ms) -> None:
+        self._hour = hour
+        self._minut = minut
+        self._second = second
+        self._ms = ms
+
 class Time:
-    def __init__(self):
-        self.hours = 0
-        self.minutes = 0
-        self.seconds = 0
-        self.milliseconds = 0
+    def __init__(self, gp, driver, tugash_vaqti) -> None:
+        self._gp = gp
+        self._driver = driver
+        self._tugash_vaqti = tugash_vaqti
 
-    def setTime(self, hours, minutes, seconds, milliseconds):
-        self.hours = hours
-        self.minutes = minutes
-        self.seconds = seconds
-        self.milliseconds = milliseconds
-
-    def __str__(self):
-        return f"{self.hours:02d}:{self.minutes:02d}:{self.seconds:02d}.{self.milliseconds:03d}"
+    def __str__(self) -> str:
+        vaqt = self._tugash_vaqti
+        return f"{vaqt._hour}:{vaqt._minut}:{vaqt._second}.{vaqt._ms}"
+        
