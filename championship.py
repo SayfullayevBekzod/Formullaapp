@@ -41,13 +41,13 @@ class Chempionship:
     def gp_ranking(self, gp: Gp):
         for gps in self._gps:
             if gps == gp:
-                return gps.get_ranking()
+                return gps.gp_ranking()
         return -1.0
     
     def get_position(self, driver: Driver, gp: Gp):
         for gps in self._gps:
             if gps == gp:
-                return gps.get_position()
+                return gps.get_position(driver)
         return -1.0
     
     def add_position(self, dr: Driver, gp: Gp):

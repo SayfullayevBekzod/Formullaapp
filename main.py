@@ -35,7 +35,7 @@ print(tournament.set_time(dr, dr2, 0, 40, 0, 0))
 print(tournament.set_time(dr2, dr3, 0, 20, 0, 0))
 print(tournament.set_time(dr3, dr4, 0, 15, 0, 0))
 
-print(tournament.gp_ranking(gp1))
+print(tournament.gp_ranking(dr))
 print(tournament.get_position(dr3, gp1))
 
 print(tournament.get_championship_ranking())
